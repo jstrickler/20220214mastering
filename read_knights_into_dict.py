@@ -1,22 +1,43 @@
+# from module import name
 from pprint import pprint
 
-knight_info = {}
+FILE_NAME = 'DATA/knights.txt'
 
-with open('DATA/knights.txt') as knights_in:
-    for raw_line in knights_in:
-        line = raw_line.rstrip()
-        name, title, color, quest, comment = line.split(':')
+def main():
+    kdata = read_data()
+    pretty_print(kdata)
+    print()
+    print(get_field(kdata, 'Arthur', 0))
+    print(get_field(kdata, 'Bedevere', 3))
+    print()
+    print_name_and_title(kdata)
 
-        knight_info[name] = title, color, quest, comment
+# business logic
+def read_data():
+    knight_info = dict()
 
-pprint(knight_info)
-print()
+    with open(FILE_NAME) as knights_in:
+        for raw_line in knights_in:
+            line = raw_line.rstrip()
+            name, title, color, quest, comment = line.split(':')
 
-print(knight_info['Lancelot'])
-print(knight_info['Lancelot'][2])
-print()
+            knight_info[name] = title, color, quest, comment
 
-for name, data in knight_info.items():
-    print(name, data[1])
-print()
+    return knight_info
+
+# display logic
+def pretty_print(wombat):  # data is a parameter (local variable)
+    print(wombat)
+
+# business logic
+def get_field(data, knight_name, field_number):
+    return data[knight_name][field_number]
+
+
+# display logic
+def print_name_and_title(info):
+    for name, data in info.items():
+        print(data[0], name)
+
+main()
 

@@ -14,17 +14,22 @@ pattern = r'[A-Z]-\d{2,3}'  # <1>
 
 if re.search(pattern, s):  # <2>
     print("Found pattern.")
+else:
+    print("Pattern not found.")
 print()
 
 m = re.search(pattern, s)  # <3>
 print(m)
 if m:
-    print("Found:", m.group(0))  # <4>
+    print("Found:", m.group(0), m.group())  # <4>   # m.group()
 print()
 
 for m in re.finditer(pattern, s):  # <5>
-    print(m.group())
+    print(m.group(0))
 print()
 
 matches = re.findall(pattern, s)  # <6>
 print("matches:", matches)
+
+#  re.match("foo")   same as re.match("^foo")
+#  re.fullmatch("foo") same as re.match("^foo$")

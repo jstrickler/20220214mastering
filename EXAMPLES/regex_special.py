@@ -12,5 +12,5 @@ officia deserunt Y-45 mollit anim id est laborum"""
 
 pattern = r'(?P<letter>[A-Z])-(?P<number>\d{2,3})'  # <1>
 
-for m in re.finditer(pattern, s):
-    print(m.group('letter'), m.group('number'))  # <2>
+for m in re.finditer(pattern, s, re.I):
+    print(m.group('letter'), m.group('number'), m.group(1))  # <2>

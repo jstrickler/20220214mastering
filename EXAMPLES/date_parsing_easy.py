@@ -12,6 +12,7 @@ date_strings = [  # <1>
     'Feb 29, 2021',
     'Feb 1 2021',
     '02/01/2021',
+    'Nov 31, 2022',
     '1 Feb 2021',
     'February 1st, 2021',
     'February 1, 2021 8:09',

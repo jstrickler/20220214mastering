@@ -12,6 +12,7 @@ officia deserunt Y-45 mollit anim id est laborum"""
 
 rx_code = re.compile(r'[A-Z]-\d{2,3}')  # <1>
 
+# re.search(pattern, s)
 if rx_code.search(s):  # <2>
     print("Found pattern.")
 print()

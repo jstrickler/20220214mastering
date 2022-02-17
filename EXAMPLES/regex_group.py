@@ -10,11 +10,16 @@ voluptate velit esse cillum dolore U901 eu fugiat nulla pariatur.
 Excepteur sint occaecat A-110 cupidatat non proident, sunt in H-332 culpa qui 
 officia deserunt Y-45 mollit anim id est laborum"""
 
+#
+# group      1----   2------
+#           0----------------
 pattern = r'([A-Z])-(\d{2,3})'  # <1>
 
+# r'....(?:....)....' non-capture group
+
 for m in re.finditer(pattern, s):
-    print(m.group(0), m.group(1), m.group(2))  # <2>
-    print(m.start(1), m.end(1), m.span())
+    print(m.group(0), m.group(1), m.group(2), end=" ")  # <2>
+    print(m.start(1), m.end(1), m.span(1))
 print()
 
 matches = re.findall(pattern, s)  # <3>

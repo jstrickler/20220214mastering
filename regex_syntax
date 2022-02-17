@@ -1,0 +1,77 @@
+
+pat       "Please pat the dog"  "A lovely pattern"
+
+
+p.t   A "Please put the pat of butter in the trash pit"
+      B "The pattern is not worth  spit"
+      C "Keep to the right"
+      D "I kept it for a week"
+
+[xyz]
+p[aeiou]t    "spit"  "I planted a petunia"    "carpet"  "a pat on the back"
+
+#   \w+\.p[lm]
+
+[0123456789][0123456789][0123456789]-[0123456789][0123456789]-[0123456789][0123456789][0123456789][0123456789]
+
+[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]
+
+[a-z] [A-Z]
+
+[a-zA-Z0-9_]    \w
+[0-9]           \d
+[ \t\n\r\b\f]   \s
+
+\d\d\d-\d\d-\d\d\d\d
+
+"Cheyenne, WY"   1
+"Cheyenne,  WY"  2
+"Cheyenne,\tWY"  3
+"Cheyenne,WY"    4
+"Cheyenne,        WY" 5
+
+Cheyenne,\s*WY
+Cheyenne,\s+WY
+Cheyenne, {1,2}WY
+
+\d{3}-\d{2}-\d{4}
+
+*  0 or more
++  1 or more
+?  0 or 1
+{x}  exactly x
+{x,y}  from x to y
+{x,}  at least x
+
+pa*t    p, 0 or more a's, t
+pa+t    p, 1 or more a's, t
+pa?t    p, 0 or 1 a's, t
+pa{3}t   paaat
+pa{1,2}t   pat or paat
+pa{2,}t   paat paaaat paaaaaaaaaaat
+
+^foo   must match foo at beginning of string
+foo$   must match foo at end of string
+
+^foo$   string must be "foo"
+
+^\d+$  string is all digits
+^\s*\d+\s*$  same, but can have optional white space before or after
+
+"Bathe the therapist"
+
+\bthe\b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
